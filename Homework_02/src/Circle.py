@@ -1,14 +1,13 @@
 from math import pi
-from .Figure import Figure
+from Homework_02.src.Figure import Figure
 
 
 class Circle(Figure):
     def __init__(self, name: str, radius: int | float) -> None:
-        if radius > 0:
-            self.name = name
-            self.radius = radius
-        else:
+        if radius <= 0:
             raise ValueError("Circle with given radius does not exist")
+        self.name = name
+        self.radius = radius
 
     @property
     def perimeter(self) -> int | float:

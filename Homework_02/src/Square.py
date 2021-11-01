@@ -1,20 +1,8 @@
-from .Figure import Figure
+from Homework_02.src.Rectangle import Rectangle
 
 
-class Square(Figure):
+class Square(Rectangle):
     def __init__(self, name: str, side: int | float) -> None:
-        if side > 0:
-            self.name = name
-            self.side = side
-        else:
+        if side <= 0:
             raise ValueError("Square with given side does not exist")
-
-    @property
-    def perimeter(self) -> int | float:
-        perimeter = 4 * self.side
-        return round(perimeter, 3)
-
-    @property
-    def area(self) -> int | float:
-        area = self.side ** 2
-        return round(area, 3)
+        super().__init__(name=name, side_a=side, side_b=side)

@@ -1,17 +1,16 @@
 from math import sqrt
-from .Figure import Figure
+from Homework_02.src.Figure import Figure
 
 
 class Triangle(Figure):
     def __init__(self, name: str, side_a: int | float, side_b: int | float, side_c: int | float) -> None:
         x, y, z = sorted([side_a, side_b, side_c])
-        if z < x + y:
-            self.name = name
-            self.side_a = side_a
-            self.side_b = side_b
-            self.side_c = side_c
-        else:
+        if z >= x + y:
             raise ValueError("Triangle with given sides does not exist")
+        self.name = name
+        self.side_a = side_a
+        self.side_b = side_b
+        self.side_c = side_c
 
     @property
     def perimeter(self) -> int | float:
