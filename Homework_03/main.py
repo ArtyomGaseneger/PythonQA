@@ -26,5 +26,5 @@ for user in users:
     user_data["books"] = books_list[start:stop]
     users_list.append(user_data)
 
-with open("Homework_03/data/results.json", "w") as results_file:
-    dump(users_list, results_file, indent=4)
+with open("Homework_03/data/result.json", "w") as result_file:
+    dump(users_list, result_file, indent=4)
