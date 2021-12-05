@@ -5,7 +5,9 @@ books_list = []
 with open("Homework_03/data/books.csv", "r") as books_file:
     books = DictReader(books_file)
     for book in books:
-        book_data = {key.lower(): book[key] for key in ("Title", "Author", "Pages", "Genre")}
+        book_data = {}
+        for key in ("Title", "Author", "Pages", "Genre"):
+            book_data[key.lower()] = int(book[key]) if key == "Pages" else book[key]
         books_list.append(book_data)
 
 with open("Homework_03/data/users.json", "r") as users_file:
