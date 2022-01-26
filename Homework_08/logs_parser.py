@@ -61,7 +61,7 @@ if len(logs) > 0:
                 date_time = date_time[:11] + " " + date_time[12:]
                 search = re.search(r"] \"(\w+) ", line)
                 if search is not None:
-                    method = search.group(1).upper()
+                    method = search.group(1)
                     if method not in METHODS:
                         method = "UNKNOWN"
                 else:
@@ -80,6 +80,7 @@ if len(logs) > 0:
         results["TOP-3 REQUESTS BY DURATION"] = top3_req
         with open(f"{log}.json", "w") as json_file:
             json.dump(results, json_file, indent=4)
+            json_file.write("\n")
         print(json.dumps(results, indent=4))
         print(f"Statistics is also saved into file {log}.json\n")
 else:

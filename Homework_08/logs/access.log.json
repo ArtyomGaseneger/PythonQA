@@ -1,7 +1,7 @@
 {
     "HTTP REQUESTS": 3216980,
-    "GET": 2247849,
-    "HEAD": 49974,
+    "GET": 2247848,
+    "HEAD": 49971,
     "POST": 918794,
     "PUT": 70,
     "PATCH": 0,
@@ -9,7 +9,7 @@
     "CONNECT": 0,
     "OPTIONS": 39,
     "TRACE": 0,
-    "UNKNOWN": 253,
+    "UNKNOWN": 257,
     "TOP-3 IP ADDRESSES BY SENT REQUESTS": [
         {
             "IP ADDRESS": "193.106.31.130",
