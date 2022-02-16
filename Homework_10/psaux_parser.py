@@ -9,7 +9,7 @@ def max_update(max_dict: dict, current_dict: dict):
 
 
 stdout = run(["ps", "aux"], capture_output=True).stdout
-output = repr(stdout)[2:-3].split("\\n")
+output = stdout.decode("utf-8").splitlines()
 users = {}
 total_mem = 0
 max_mem = {"value": -1, "process": ""}
